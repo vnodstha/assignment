@@ -1,0 +1,66 @@
+﻿@model MachineLearningCompany.Models.MachineLearningCompanyFeedback
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MachineLearningCompanyFeedback</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Heading)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Heading)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Company)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Feedback)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Feedback)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Agree)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Agree)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Disagree)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disagree)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,80 @@
+﻿@model MachineLearningCompany.Models.MachineLearningCompanyFeedback
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<link href="~/css/StyleSheet.css" rel="stylesheet" />
+<h2>Feedback on Machine Learing Companies </h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" readonly="readonly" class="form-control"
+                       type="datetime-local" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" readonly="readonly" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Heading" class="control-label"></label>
+                <input asp-for="Heading" class="form-control" />
+                <span asp-validation-for="Heading" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company" class="control-label"></label>
+                <select asp-for="Company" class="form-control">
+                    <option value="" selected disabled>Select a Company</option>
+                    <option>IBM</option>
+                    <option>AMAZON</option>
+                    <option>GOOGLE</option>
+                    <option>MICRSOFT</option>
+                    <option>ORACLE</option>
+                    <option>SAS</option>
+                </select>
+                <span asp-validation-for="Company" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Feedback" class="control-label"></label>
+                <textarea asp-for="Feedback" class="form-control" rows="10" placeholder="Enter your Feedback here"></textarea>
+                <span asp-validation-for="Feedback" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rating" class="control-label"></label>
+                <input asp-for="Rating" class="form-control" />
+                <span asp-validation-for="Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="Agree" class="control-label"></label>
+                <input asp-for="Agree" class="form-control" />
+                <span asp-validation-for="Agree" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="Disagree" class="control-label"></label>
+                <input asp-for="Disagree" class="form-control" />
+                <span asp-validation-for="Disagree" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

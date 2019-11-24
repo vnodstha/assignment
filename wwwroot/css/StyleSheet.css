@@ -1,0 +1,145 @@
+﻿.bg {
+    background-image: url("../images/data-dots_0.jpg");
+    background-attachment: fixed;
+    background-color: #645862;    
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    cursor: default;   
+    padding: 0px;
+}
+
+.effect, .c1-bg {
+    background-color: rgba(31, 20, 20, 0.9);
+    padding: 40px 0px;
+}
+
+.header, .body, .feedback {
+    height:100%;
+    width: 1000px;
+    margin: auto;
+    text-align:center;
+}
+
+.hearder {
+    background-image: url("../images/1200px-Data_science.jpg");
+    background-attachment: fixed;
+    background-color: #645862;    
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    cursor: default;
+    padding: 0px;
+}
+
+.header-bg {
+    background-image: url("../images/1200px-Data_science.jpg");
+    background-attachment: fixed;
+    background-color: #645862;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    cursor: default;
+    padding: 0px;
+}
+
+.c1, .c2, .c3, .c4, .c5, .c6 {
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom:10px;
+}
+
+.c1 {
+    background-image: url("../images/linkimages/c1.jpg");    
+    background-color: #645862;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    cursor: default;
+    padding: 0px;
+}
+
+.c2 {
+    background-image: url("../images/linkimages/c2.jpg");
+    background-color: #645862;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    cursor: default;
+    padding: 0px;
+}
+
+.c3 {
+    background-image: url("../images/linkimages/c3.jpg");
+    background-color: #645862;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    cursor: default;
+    padding: 0px;
+}
+
+.c4 {
+    background-image: url("../images/linkimages/c4.jpg");
+    background-color: #645862;    
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    cursor: default;
+    padding: 0px;
+}
+
+.c5 {
+    background-image: url("../images/linkimages/c5.jpg");
+    background-color: #645862;   
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    cursor: default;
+    padding: 0px;
+}
+
+.c6 {
+    background-image: url("../images/linkimages/c6.png");
+    background-color: #645862;    
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    cursor: default;
+    padding: 0px;
+}
+
+.line {
+    padding: 20px 0px 10px 0px;
+}
+
+    .line hr {
+        border: none;
+        height: 2px;
+        background-color: #f8bd08;
+    }
+
+@media screen and (max-width: 1000px) {
+    .header, .body, .feedback {
+        
+        width: 800px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .header, .body, .feedback {
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header, .body, .feedback {
+        width: 400px;
+    }
+}

@@ -1,0 +1,69 @@
+﻿@model MachineLearningCompany.Models.MachineLearningCompanyFeedback
+
+@{
+    ViewData["Title"] = "Edit";
+}
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+<h2>Edit</h2>
+
+<h4>Machine Learning Company Feedback</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Heading" class="control-label"></label>
+                <input asp-for="Heading" class="form-control" />
+                <span asp-validation-for="Heading" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company" class="control-label"></label>
+                <input asp-for="Company" class="form-control" />
+                <span asp-validation-for="Company" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Feedback" class="control-label"></label>
+                <input asp-for="Feedback" class="form-control" />
+                <span asp-validation-for="Feedback" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rating" class="control-label"></label>
+                <input asp-for="Rating" class="form-control" />
+                <span asp-validation-for="Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Agree" class="control-label"></label>
+                <input asp-for="Agree" class="form-control" />
+                <span asp-validation-for="Agree" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Disagree" class="control-label"></label>
+                <input asp-for="Disagree" class="form-control" />
+                <span asp-validation-for="Disagree" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

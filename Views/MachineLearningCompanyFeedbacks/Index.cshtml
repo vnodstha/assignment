@@ -1,0 +1,97 @@
+﻿
+<link href="~/css/StyleSheet.css" rel="stylesheet" />
+@model IEnumerable<MachineLearningCompany.Models.MachineLearningCompanyFeedback>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="~/css/StyleSheet.css" rel="stylesheet" />
+<h1>FEEDBACK</h1>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        <a asp-action="Create" class="btn btn-primary" style="color:white; background-color:dimgrey;">Create New</a>
+    </p>
+}
+
+<div class="line">
+    <hr />
+</div>
+
+
+<div class="container feedbacks">
+    @foreach (var item in Model)
+    {
+        <div class="container feedback">
+            <h2><b>@Html.DisplayFor(modelItem => item.Heading)</b></h2>
+            <h4><span>&#64;</span>@Html.DisplayFor(modelItem => item.Company)</h4>
+            <p>
+                @{
+                    int numStars = 0;
+                    if (item.Rating < -1)
+                    {@Html.ValidationMessage("please enter correct number") }
+                else if (item.Rating == 0) { numStars = 0; }
+                else if (item.Rating == 1) { numStars = 1; }
+                else if (item.Rating == 2) { numStars = 2; }
+                else if (item.Rating == 3) { numStars = 3; }
+                else if (item.Rating == 4) { numStars = 4; }
+                else if (item.Rating == 5) { numStars = 5; }
+                else if (item.Rating > 5)
+                { @Html.ValidationMessage("please enter correct number")}
+
+            for (int i = 0; i < numStars; i++)
+            {
+                <span style="color:#f8bd08;">&#x2605;</span>
+            }
+            for (int i = 0; i < 5 - numStars; i++)
+            {
+                <span>&#x2605;</span>
+            }
+                }
+            </p>
+
+            <p>@Html.DisplayFor(modelItem => item.Feedback)</p>
+            <p>Feedback by <b>@Html.DisplayFor(modelItem => item.Name)</b> | Posted on<b> @Html.DisplayFor(modelItem => item.Date)</b></p>
+
+
+
+            <a asp - action="Details" asp-route-id="@item.Id" class="btn btn-primary" style="color:black; background-color:white;"> Details </a>
+
+            <a asp-action="IncreaseFeedBackAgree" asp-route-id="@item.Id" class="btn btn-primary" style="color:white; background-color:green; ">
+                Agree (@Html.DisplayFor(ModelItem => item.Agree))
+            </a>
+
+
+
+
+            <a asp-action="IncreaseFeedBackDisagree" asp-route-id="@item.Id" class="btn btn-primary" style="color:white; background-color:red;">
+                Disagree (@Html.DisplayFor(ModelItem => item.Disagree))
+            </a>
+
+
+            @if (User.IsInRole("Manager"))
+            {
+
+                <span class="pull-right">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary" style="color:black; background-color:white;">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary" style="color:black; background-color:white;">Delete</a>
+                </span>
+            }
+
+        </div>
+        <div class="line">
+            <hr />
+        </div>
+    }
+
+</div>
+
+
+
+
+
+
+
+
+
